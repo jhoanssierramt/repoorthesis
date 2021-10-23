@@ -8,7 +8,7 @@ function eliminar(identificador){
     console.log(message);
 
     $.ajax({
-        url: "localhost:8080/api/Ortopedic/delete",
+        url: "http://localhost:8080/api/Ortopedic/delete",
         type: 'DELETE',
         dataType: 'json',
         headers: {
