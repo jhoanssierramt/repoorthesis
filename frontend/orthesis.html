@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/consultarorth.js"></script>
+        <script type="text/javascript" src="js/guardarorth.js"></script>
+        <script type="text/javascript" src="js/eliminarorth.js"></script>
+        <script type="text/javascript" src="js/actualizarorth.js"></script>
+    </head>
+    <body>
+        <h1>Orthesis</h1>
+        <h3>Registro de Órtesis:</h2>
+        ID <input type="number" id="id"/> <br>
+        BRAND <input type="text" id="brand"/> <br>
+        YEAR <input type="number" id="year"/> <br>
+        CATEGORY_ID <input type="number" id="categoryId"/> <br>
+        NAME <input type="text" id="name"/> <br>
+        DESCRIPTION <input type="text" id="description"/> <br>
+        <button onclick="guardar()">Enviar</button> <br>
+        
+        <h4>Órtesis almacenadas:</h4>
+        <button onclick="consultar()">Consultar</button> 
+        <div id="tabla">
+        
+        </div>
+    </body>
+</html>

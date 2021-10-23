@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/consultarca.js"></script>
+        <script type="text/javascript" src="js/guardarca.js"></script>
+        <script type="text/javascript" src="js/eliminarca.js"></script>
+    </head>
+
+    <body>
+        <h1>Gestión de Categoría</h1>
+        <h4>Registrar categoria</h4>
+        ID <input type="number" id="id"/> <br/>
+        Nombre <input type="text" id="name" /> <br/>
+        Descripción <input type="text" id="description" /> <br/>
+        <button onclick="guardarca()">Guardar</button>
+
+        <h4>Categorias Registrados</h4>
+        <button onclick="consultarca()">Consultar Datos</button>
+        <div id="tabla">
+          <!-- Esto es un comentario en html y, 
+            puede ser multilinea  --> 
+        </div>
+
+    </body>
+</html>
