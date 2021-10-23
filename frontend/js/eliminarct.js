@@ -8,7 +8,7 @@ function eliminarct(identificadorct){
     console.log(client);
 
     $.ajax({
-        url: "localhost:8080/api/Client/delete",
+        url: "http://localhost:8080/api/Client/delete",
         type: 'DELETE',
         dataType: 'json',
         headers: {

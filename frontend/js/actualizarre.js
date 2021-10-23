@@ -13,7 +13,7 @@ function actualizarre(){
     console.log(reservation);
 
     $.ajax({
-        url: "localhost:8080/api/Reservation/update",
+        url: "http://localhost:8080/api/Reservation/update",
         type: 'PUT',
         dataType: 'json',
         headers: {

@@ -11,7 +11,7 @@ function actualizarct(){
     console.log(client);
 
     $.ajax({
-        url: "localhost:8080/api/Client/update",
+        url: "http://localhost:8080/api/Client/update",
         type: 'PUT',
         dataType: 'json',
         headers: {

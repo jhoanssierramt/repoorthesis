@@ -10,7 +10,7 @@ function actualizar(){
     console.log(message);
 
     $.ajax({
-        url: "localhost:8080/api/Message/update",
+        url: "http://localhost:8080/api/Message/update",
         type: 'PUT',
         dataType: 'json',
         headers: {
