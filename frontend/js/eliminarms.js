@@ -8,6 +8,7 @@ function eliminar(identificador){
     console.log(message);
 
     $.ajax({
+
         url: "http://localhost:8080/api/Message/"+identificador,
         type: 'DELETE',
         dataType: 'json',

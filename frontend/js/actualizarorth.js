@@ -11,7 +11,7 @@ function actualizar(){
     console.log(message);
 
     $.ajax({
-        url: "localhost:8080/api/Ortopedic/update",
+        url: "http://localhost:8080/api/Ortopedic/update",
         type: 'PUT',
         dataType: 'json',
         headers: {

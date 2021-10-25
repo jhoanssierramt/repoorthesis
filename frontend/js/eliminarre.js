@@ -1,23 +1,23 @@
-function eliminarct(identificadorct){
+function eliminarre(identificador){
     console.log("ejecutando funcion para eliminar");
 
-    let client = {
-        id: +identificadorct
+    let reserva = {
+        id: +identificador
     };
 
-    console.log(client);
+    console.log(reserva);
 
     $.ajax({
-        url: "http://localhost:8080/api/Client/delete",
+        url: "http://localhost:8080/api/Reservation/"+identificador,
         type: 'DELETE',
         dataType: 'json',
         headers: {
             "Content-Type": "application/json"
         },
-        data: JSON.stringify(client),
+        //data: JSON.stringify(reserva),
         statusCode:{
             204:function(){
-                alert('Se ha eliminado el cliente');
+                alert('Se ha eliminado el mensaje');
             }
         },
     });

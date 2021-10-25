@@ -5,10 +5,12 @@
  */
 package co.edu.usa.orthesisproject.web.custom;
 
+import org.springframework.http.HttpStatus;
+
 /**
  *
  * @author Y40-70
  */
 public class DictionaryHttpMessage {
-    
+    public final HttpStatus CODIGO_PERSONALIZADO = HttpStatus.CONFLICT; //Código 409
 }

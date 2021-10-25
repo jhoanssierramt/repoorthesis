@@ -3,14 +3,13 @@ function actualizarca(){
     let category = {
         id: +$("#id").val(),
         name: $("#name").val(),
-        description: $("#description").val(),
-        ortopedic: $("#ortopedics").val()
+        description: $("#description").val()
     };
 
     console.log(category);
 
     $.ajax({
-        url: "localhost:8080/api/Category/update",
+        url: "http://localhost:8080/api/Category/update",
         type: 'PUT',
         dataType: 'json',
         headers: {
