@@ -3,14 +3,14 @@ function actualizar(){
     console.debug("otro mensaje");
     let message = {
         idMessage: +$("#idMessage").val(),
-        messagetext: $("#messagetext").val(),
+        messageText: $("#messageText").val(),
 
     };
 
     console.log(message);
 
     $.ajax({
-        url: "localhost:8080/api/Message/update",
+        url: "http://localhost:8080/api/Message/update",
         type: 'PUT',
         dataType: 'json',
         headers: {

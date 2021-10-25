@@ -5,6 +5,7 @@
  */
 package co.edu.usa.orthesisproject.modelo;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -28,10 +29,11 @@ public class Message implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
-
+    
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties({"messages", "client", "reservations"})
+
     private Ortopedic ortopedic;
     
     @ManyToOne
@@ -70,6 +72,6 @@ public class Message implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
-
+    
 }
 

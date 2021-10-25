@@ -27,8 +27,8 @@ function mostrarRespuesta(items){
                    <td>${items[i].idMessage}</td>
                    <td>${items[i].messageText}</td>
                    <td>
-                        <button onclick="eliminar(${items[i].id})" disabled>Eliminar</button>
-                        <a href="detallems.html?id=${items[i].id}" disabled>Editar Mensaje</a>
+                        <button onclick="eliminar(${items[i].idMessage})" >Eliminar</button>
+                        <a href="detallems.html?id=${items[i].idMessage}" >Editar Mensaje</a>
                    </td> 
                 </tr>`;
     }
