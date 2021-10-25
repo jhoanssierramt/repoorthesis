@@ -2,7 +2,6 @@ function guardarre(){
     console.log("ejecutando funcion guardar");
 
     let reservation = {
-        idReservation: +$("#idReservation").val(),
         startDate: $("#startDate").val(),
         devolutionDate: $("#devolutionDate").val(),
         client: {idClient: +$("#idClient").val()},
