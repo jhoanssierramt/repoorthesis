@@ -26,15 +26,23 @@ function mostrarRespuesta(items){
                   
     
     for (var i=0; i < items.length; i++) {
+        //Esta transformación permite que las fechas se vean adecuadamente
+        //Sin embargo no sé como cambiar la zona horaria (Jhoan Sierra)
+        let initDateRow = new Date(items[i].startDate);
+        let initDateRowFormmated = initDateRow.toISOString().split('T')[0];
+
+        let finalDateRow = new Date(items[i].devolutionDate);
+        let finalDateRowFormmated = finalDateRow.toISOString().split('T')[0];
+
         tabla +=`<tr>
                    <td>${items[i].idReservation}</td>
-                   <td>${items[i].startDate}</td>
-                   <td>${items[i].devolutionDate}</td>
+                   <td>${initDateRowFormmated}</td>
+                   <td>${finalDateRowFormmated}</td>
                    <td>${items[i].status}</td>
                    <td>${items[i].score}</td>
                    <td>
-                        <button onclick="eliminarca(${items[i].id})" disabled>Eliminar</button>
-                        <a href="detallere.html?id=${items[i].id}" disabled>Editar</a>
+                        <button onclick="eliminarre(${items[i].idReservation})">Eliminar</button>
+                        <a href="detallere.html?id=${items[i].idReservation}">Editar</a>
                    </td> 
                 </tr>`;
     }

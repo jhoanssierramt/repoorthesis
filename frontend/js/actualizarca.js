@@ -3,8 +3,7 @@ function actualizarca(){
     let category = {
         id: +$("#id").val(),
         name: $("#name").val(),
-        description: $("#description").val(),
-        ortopedic: $("#ortopedics").val()
+        description: $("#description").val()
     };
 
     console.log(category);

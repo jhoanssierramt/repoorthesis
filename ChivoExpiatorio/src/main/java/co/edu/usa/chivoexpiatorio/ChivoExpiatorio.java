@@ -39,5 +39,10 @@ public class ChivoExpiatorio {
             {
                 System.out.println("Error al transformar fecha:"+e);
             }
+            
+            ///Contador de caracteres:
+            String descripcion = "Esta frase tiene 30 caracteres";
+            int caracteres = descripcion.length();
+            System.out.println("Número de caracteres: "+caracteres);
 	}
 }

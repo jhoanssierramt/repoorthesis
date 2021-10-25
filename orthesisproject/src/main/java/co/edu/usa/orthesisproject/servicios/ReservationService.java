@@ -29,7 +29,8 @@ public class ReservationService {
     
     public Reservation save(Reservation reservation){
         //Lógica idReservation no nulo:
-        if (reservation.getIdReservation() != null) {
+        //Como id es autoincrementable, es bueno no hacer esta comparación:
+        //if (reservation.getIdReservation() != null) {
             
             //Criterio de aceptación: idClient debe ser un valor númerico entero:
             //Criterio de aceptación: id (Orthesis) debe ser un valor numérico entero:
@@ -74,8 +75,8 @@ public class ReservationService {
             
             //Si todo funciona se realiza el POST:
             return ReservationRepository.save(reservation);
-        }
-        return reservation;
+        //}
+        //return reservation;
     }
     
     public Optional<Reservation> getById(int id){
@@ -152,7 +153,7 @@ public class ReservationService {
                 
                 //Criterio de aceptación: Fecha inicio debe ser anterior a la fecha entrega:
                 if(fechaInicioConFormato.before(fechaEntregaConFormato))
-                    System.out.println("La fecha de inicio es menor que la fecha de entrega. Ok");
+                    System.out.println("La fecha de inicio es anterior que la fecha de entrega. Ok");
                 else
                     return reservation;
                     
@@ -161,7 +162,8 @@ public class ReservationService {
                     //reservaConsultada.get().setStatus(reservation.getStatus());
                     //Criterio de aceptación: Status debe ser "Programado", "cancelado" o "Realizado":
                     String statusQuery = reservation.getStatus();
-                    if((statusQuery=="Programado")||(statusQuery=="cancelado")||(statusQuery=="Realizado"))
+                    System.out.println("StatusQuery: "+statusQuery);
+                    if((statusQuery.equals("Programado"))||(statusQuery.equals("cancelado"))||(statusQuery.equals("Realizado")))
                         reservaConsultada.get().setStatus(statusQuery);
                     else
                         return reservation;

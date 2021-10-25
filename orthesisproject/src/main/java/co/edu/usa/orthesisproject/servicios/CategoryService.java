@@ -27,7 +27,13 @@ public class CategoryService {
     }
     
     public Category save(Category category){
-        return categoryRepository.save(category);
+        
+        //Criterio de aceptación: El valor de nombre debe ser un texto de no más de 45 caracteres.
+        //Criterio de aceptación: El valor de descripción debe ser un texto de máximo 250 caracteres.
+        if((category.getName().length()<=45)&&(category.getDescription().length()<=250))
+            return categoryRepository.save(category);
+        else
+            return category;
     }
     
     public Optional<Category> getById(int id){
@@ -52,21 +58,22 @@ public class CategoryService {
 
     public Category update(Category category) {
         if (category.getId() != null) {
-            Optional<Category> reservaConsultada = categoryRepository.getById(category.getId());
-            if (reservaConsultada.isPresent()) {
+            Optional<Category> categoriaConsultada = categoryRepository.getById(category.getId());
+            if (categoriaConsultada.isPresent()) {
                 
                 //AQUI VA LA LÓGICA DEL NEGOCIO:////////
                 
-                if(category.getName()!=null){
-                    reservaConsultada.get().setName(category.getName());
-                }
-                if(category.getDescription()!=null){
-                    reservaConsultada.get().setDescription(category.getDescription());
-                }
-                
+                //Criterio de aceptación: El valor de nombre debe ser un texto de no más de 45 caracteres.
+                //También debe ser un valor no nulo.
+                if((category.getName()!=null)&&(category.getName().length()<=45))
+                    categoriaConsultada.get().setName(category.getName());
+                //Criterio de aceptación: El valor de descripción debe ser un texto de máximo 250 caracteres.
+                //También debe ser un valor no nulo.
+                if((category.getDescription()!=null)&&(category.getDescription().length()<=250))
+                    categoriaConsultada.get().setDescription(category.getDescription());
                 
                 ///FIN LÓGICA//////////////////////////////////
-                return categoryRepository.save(reservaConsultada.get());
+                return categoryRepository.save(categoriaConsultada.get());
             }
         }
         return category;

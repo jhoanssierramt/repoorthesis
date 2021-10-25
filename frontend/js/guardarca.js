@@ -2,7 +2,6 @@ function guardarca(){
     console.log("ejecutando funcion guardar");
 
     let category = {
-        id: +$("#id").val(),
         name: $("#name").val(),
         description: $("#description").val()
     }; 

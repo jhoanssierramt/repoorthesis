@@ -1,13 +1,10 @@
 function actualizarre(){
     console.log("ejecutando funcion para actualizar");
     let reservation = {
-        idReservation: +$("#idReservation").val(),
+        idReservation: +$("#id").val(),
         startDate: $("#startDate").val(),
         devolutionDate: $("#devolutionDate").val(),
-        status: $("#status").val(),
-        ortopedic: $("#ortopedic").val(),
-        client: $("#client").val(),
-        score: $("#score").val()
+        status: $("#status").val()
     };
 
     console.log(reservation);
