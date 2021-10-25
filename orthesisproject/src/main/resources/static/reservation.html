@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./js/consultarre.js"></script>
+        <script type="text/javascript" src="./js/guardarre.js"></script>
+        <script type="text/javascript" src="./js/eliminarre.js"></script>
+    </head>
+
+    <body>
+        <h1>Gestión de Reservas</h1>
+        <h4>Registrar Reserva</h4>
+        Fecha de inicio <input type="date" id="startDate" /> <br/>
+        Fecha de devolución <input type="date" id="devolutionDate" /> <br/>
+        ID_CLIENT <input type="number" id="idClient"/> <br/>
+        ID_ORTOPEDICS <input type="number" id="id"/> <br/>
+        <button onclick="guardarre()">Guardar</button>
+
+        <h4>Reservas Registradas</h4>
+        <button onclick="consultarre()">Consultar Datos</button>
+        <div id="tabla">
+          <!-- Esto es un comentario en html y, 
+            puede ser multilinea  --> 
+        </div>
+        <br/><br/><br/>
+        <a href="privado.html">Volver...</a>
+
+    </body>
+</html>

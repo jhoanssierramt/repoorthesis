@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./js/guardarms.js"></script>
+        <script type="text/javascript" src="./js/eliminarms.js"></script>
+        <script type="text/javascript" src="./js/actualizarms.js"></script>
+        <script type="text/javascript" src="./js/consultarms.js"></script>
+    </head>
+    <body>
+        <h1>Message</h1>
+        <h2>Registro de Mensajes</h2>
+        MESSAGETEXT <input type="text" id="messagetext"/> <br>
+        ID_CLIENT <input type="number" id="idClient"/> <br>
+        ID_ORTOPEDICS <input type="number" id="id"/> <br>
+        <button onclick="guardar()">Enviar</button>
+        
+        <h4>Mensajes Registrados</h4>
+        <button onclick="consultar()">Consultar Mensajes Registrados</button> 
+        <div id="tabla">
+        
+        </div>
+        <br/><br/><br/>
+        <a href="privado.html">Volver...</a>
+    </body>
+</html>
