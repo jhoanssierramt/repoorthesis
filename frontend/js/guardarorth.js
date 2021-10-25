@@ -1,12 +1,12 @@
-function guardar(){
+function guardarorth(){
     console.log("ejecutando funcion guardar");
 
     let ortopedic = {
         id: +$("#id").val(),
+        name: $("#name").val(),
         brand: $("#brand").val(),
         year: +$("#year").val(),
         category: {id: +$("#categoryId").val()},
-        name: $("#name").val(),
         description: $("#description").val()        
     }; 
 
@@ -22,7 +22,7 @@ function guardar(){
         data: JSON.stringify(ortopedic),
         statusCode:{
             201:function(){
-                alert('Se ha registrado la orthesis');
+                alert('Se ha registrado la órtesis');
             }
         },
     });

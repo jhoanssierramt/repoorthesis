@@ -1,14 +1,16 @@
-function actualizar(){
+function actualizarorth(){
     console.log("ejecutando funcion para actualizar");
-    let message = {
+    console.debug("actualizando...");
+    let ortopedic = {
         id: +$("#id").val(),
         brand: $("#brand").val(),
-        model: +$("#model").val(),
+        year: +$("#year").val(),
         category_id: +$("#category_id").val(),
-        name: $("#name").val()
+        name: $("#name").val(),
+        description: $("#description").val()
     };
 
-    console.log(message);
+    console.log(ortopedic);
 
     $.ajax({
         url: "http://localhost:8080/api/Ortopedic/update",
@@ -17,10 +19,10 @@ function actualizar(){
         headers: {
             "Content-Type": "application/json"
         },
-        data: JSON.stringify(message),
+        data: JSON.stringify(rtopedic),
         statusCode:{
             201:function(){
-                alert('Se ha actualizado la orthesis');
+                alert('Se ha actualizado la órtesis');
             }
         },
     });

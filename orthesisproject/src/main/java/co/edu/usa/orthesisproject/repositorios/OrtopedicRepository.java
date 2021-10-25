@@ -24,6 +24,7 @@ public class OrtopedicRepository {
     public List<Ortopedic> getAll(){
         return (List<Ortopedic>) crud.findAll();
     }
+    
     public Optional<Ortopedic> getById(int id){
         return crud.findById(id);
     }

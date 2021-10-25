@@ -30,14 +30,55 @@ public class OrtopedicService {
         return OrtopedicRepository.save(Ortopedic);
     }
     
-    public Ortopedic getById(int id){
-        Optional<Ortopedic> Ortopedic = OrtopedicRepository.getById(id);
-        return Ortopedic.orElse(new Ortopedic());
+//    public Ortopedic getById(int id){
+//        Optional<Ortopedic> Ortopedic = OrtopedicRepository.getById(id);
+//        return Ortopedic.orElse(new Ortopedic());
 //        if (categoria.isPresent()){
 //            return categoria.get();
 //        }else{
 //            return new Categoria();
 //        }
+//    }
+    
+    public Optional<Ortopedic> getById(int id) {                   //modificado
+        Optional<Ortopedic> Ortopedic = OrtopedicRepository.getById(id);
+        return Ortopedic;
+    } 
+    
+    public boolean delete(int id){
+        System.out.println("deleting Ortesis with id: "+id);
+        boolean del = OrtopedicRepository.getById(id).map(Ortopedic -> {
+            OrtopedicRepository.delete(Ortopedic);
+            return true;
+        }).orElse(false);
+        return del;       
+    }
+    
+    public Ortopedic update(Ortopedic ortopedic) {
+        if (ortopedic.getName() != null) {
+            Optional<Ortopedic> ortopedicConsultada = OrtopedicRepository.getById(ortopedic.getId());
+            if (ortopedicConsultada.isPresent()) {
+                
+                if (ortopedic.getName() != null) {
+                    ortopedicConsultada.get().setName(ortopedic.getName());
+                }
+                
+                if (ortopedic.getBrand() != null) {
+                    ortopedicConsultada.get().setBrand(ortopedic.getBrand());
+                }
+                
+                if (ortopedic.getYear() != null) {
+                    ortopedicConsultada.get().setYear(ortopedic.getYear());
+                }
+                
+                if (ortopedic.getDescription() != null) {
+                    ortopedicConsultada.get().setDescription(ortopedic.getDescription());
+                }
+                
+                return OrtopedicRepository.save(ortopedicConsultada.get());
+            }
+        }
+        return ortopedic;
     }
 }
 
