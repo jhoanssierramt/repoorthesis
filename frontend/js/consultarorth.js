@@ -1,4 +1,4 @@
-function consultar(){
+function consultarorth(){
     $.ajax({
         url: "http://localhost:8080/api/Ortopedic/all",
         type: 'GET',
@@ -17,10 +17,10 @@ function mostrarRespuesta(items){
     var tabla = `<table border="1">
                   <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>BRAND</th>
-                    <th>YEAR</th>
-                    <th>DESCRIPTION</th>
+                    <th>NOMBRE</th>
+                    <th>MARCA</th>
+                    <th>AÑO</th>
+                    <th>DESCRIPCION</th>
                     <th>ACCIONES</th>
                   </tr>`;
                   
@@ -33,8 +33,8 @@ function mostrarRespuesta(items){
                    <td>${items[i].year}</td>
                    <td>${items[i].description}</td>
                    <td>
-                        <button onclick="eliminar(${items[i].id})" disabled>Eliminar</button>
-                        <a href="detalleorth.html?id=${items[i].id}" disabled>Editar Orthesis</a>
+                        <button onclick="eliminarorth(${items[i].id})">Eliminar</button>
+                        <a href="detalleorth.html?id=${items[i].id}" Abled>Editar</a>
                    </td> 
                 </tr>`;
     }

@@ -4,17 +4,19 @@
         <script type="text/javascript" src="js/consultarct.js"></script>
         <script type="text/javascript" src="js/guardarct.js"></script>
         <script type="text/javascript" src="js/eliminarct.js"></script>
+        <script type="text/javascript" src="js/actualizarct.js"></script>
+
     </head>
 
     <body>
         <h1>Gestión de Clientes</h1>
         <h4>Registrar cliente</h4>
-        ID <input type="number" id="idClient" /> <br/>
+        ID <input type="number" id="idClient" disabled/> <br/>
         Nombre <input type="text" id="name" /> <br/>
-        Email <input type="text" id="email" /> <br/>
-        Password <input type="text" id="password" /> <br/>
+        Email <input type="email" id="email" /> <br/>
+        Password <input type="password" id="password" /> <br/>
         Edad <input type="number" id="age" /> <br/>
-        <button onclick="guardarct()">Guardar</button>
+        <button onclick="guardarct()">Guardar</button> <br/>
 
         <h4>Clientes Registrados</h4>
         <button onclick="consultarct()">Consultar Datos</button>
@@ -22,6 +24,8 @@
           <!-- Esto es un comentario en html y, 
             puede ser multilinea  --> 
         </div>
-
+        
+        <br/><br/><br/>
+        <a href="index.html">Volver...</a>
     </body>
 </html>

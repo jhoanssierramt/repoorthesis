@@ -1,8 +1,8 @@
 function actualizarct(){
     console.log("ejecutando funcion para actualizar");
-    console.debug("actulizando...");
+    console.debug("actualizando...");
     let client = {
-        id: +$("#id").val(),
+        idClient: +$("#idClient").val(),
         name: $("#name").val(),
         email: $("#email").val(),
         age: +$("#age").val()

@@ -31,8 +31,8 @@ function mostrarRespuesta(items){
                    <td>${items[i].name}</td>
                    <td>${items[i].age}</td>
                    <td>
-                        <button onclick="eliminarct(${items[i].id})" disabled>Eliminar</button>
-                        <a href="detallect.html?id=${items[i].id}" disabled>Editar</a>
+                        <button onclick="eliminarct(${items[i].idClient})">Eliminar</button>
+                        <a href="detallect.html?id=${items[i].idClient}" Abled>Editar</a>
                    </td> 
                 </tr>`;
     }

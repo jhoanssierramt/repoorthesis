@@ -5,22 +5,28 @@
         <script type="text/javascript" src="js/guardarorth.js"></script>
         <script type="text/javascript" src="js/eliminarorth.js"></script>
         <script type="text/javascript" src="js/actualizarorth.js"></script>
+
     </head>
+
     <body>
-        <h1>Orthesis</h1>
-        <h3>Registro de Órtesis:</h2>
-        ID <input type="number" id="id"/> <br>
-        BRAND <input type="text" id="brand"/> <br>
-        YEAR <input type="number" id="year"/> <br>
-        CATEGORY_ID <input type="number" id="categoryId"/> <br>
-        NAME <input type="text" id="name"/> <br>
-        DESCRIPTION <input type="text" id="description"/> <br>
-        <button onclick="guardar()">Enviar</button> <br>
+        <h1>Gestión de Órtesis</h1>
+        <h3>Registrar Órtesis:</h2>
+        ID <input type="number" id="id" disabled/> <br>
+        Marca <input type="text" id="brand"/> <br>
+        Año <input type="number" id="year"/> <br>
+        Categoria/Id <input type="number" id="categoryId"/> <br>
+        Nombre <input type="text" id="name"/> <br>
+        Descripción <input type="text" id="description"/> <br>
+        <button onclick="guardarorth()">Guardar</button> <br/>
         
         <h4>Órtesis almacenadas:</h4>
-        <button onclick="consultar()">Consultar</button> 
+        <button onclick="consultarorth()">Consultar Datos</button> 
         <div id="tabla">
-        
+          <!-- Esto es un comentario en html y, 
+            puede ser multilinea  -->
         </div>
+
+        <br/><br/><br/>
+        <a href="index.html">Volver...</a>
     </body>
 </html>

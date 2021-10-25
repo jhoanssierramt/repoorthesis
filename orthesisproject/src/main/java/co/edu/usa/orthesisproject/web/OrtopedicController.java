@@ -8,11 +8,16 @@ package co.edu.usa.orthesisproject.web;
 import co.edu.usa.orthesisproject.modelo.Ortopedic;
 import co.edu.usa.orthesisproject.servicios.OrtopedicService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,9 +41,26 @@ public class OrtopedicController {
         return OrtopedicService.getAll();
     }
     
+    @GetMapping("/{id}")
+    public Optional<Ortopedic> getById(@PathVariable("id") int id) {        //modificado
+        return OrtopedicService.getById(id);
+    }
+    
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Ortopedic save(@RequestBody Ortopedic Ortopedic){
         return OrtopedicService.save(Ortopedic);
     }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable("id") int id) {
+        return new ResponseEntity<>(OrtopedicService.delete(id), HttpStatus.NO_CONTENT);
+    }
+    
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Ortopedic update(@RequestBody Ortopedic Ortopedic) {
+        return OrtopedicService.update(Ortopedic);
+   }
+    
 }

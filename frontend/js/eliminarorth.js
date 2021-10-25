@@ -1,23 +1,23 @@
-function eliminar(identificador){
+function eliminarorth(identificador){
     console.log("ejecutando funcion para eliminar");
 
-    let message = {
+    let ortopedic = {
         id: +identificador
     };
 
-    console.log(message);
+    console.log(ortopedic);
 
     $.ajax({
-        url: "http://localhost:8080/api/Ortopedic/delete",
+        url: "http://localhost:8080/api/Ortopedic/"+identificador,
         type: 'DELETE',
         dataType: 'json',
         headers: {
             "Content-Type": "application/json"
         },
-        data: JSON.stringify(message),
+        //data: JSON.stringify(ortopedic),
         statusCode:{
             204:function(){
-                alert('Se ha eliminado la orthesis');
+                alert('Se ha eliminado la órtesis');
             }
         },
     });
