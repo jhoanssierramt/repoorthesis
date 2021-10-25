@@ -3,7 +3,7 @@ function actualizar(){
     console.debug("otro mensaje");
     let message = {
         idMessage: +$("#idMessage").val(),
-        messagetext: $("#messagetext").val(),
+        messageText: $("#messageText").val(),
 
     };
 
