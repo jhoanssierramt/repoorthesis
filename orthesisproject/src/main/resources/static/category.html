@@ -1,27 +1,77 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="./js/consultarca.js"></script>
-        <script type="text/javascript" src="./js/guardarca.js"></script>
-        <script type="text/javascript" src="./js/eliminarca.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Category</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/categoryjs.js"></script>
+
     </head>
 
     <body>
         <h1>Gestión de Categoría</h1>
-        <h4>Registrar categoria</h4>
-        Nombre <input type="text" id="name" /> <br/>
-        Descripción <input type="text" id="description" /> <br/>
-        <button onclick="guardarca()">Guardar</button>
-
-        <h4>Categorias Registrados</h4>
-        <button onclick="consultarca()">Consultar Datos</button>
-        <div id="tabla">
-          <!-- Esto es un comentario en html y, 
-            puede ser multilinea  --> 
-        </div>
+        
+        <button type="button" class="btn btn-success" onclick="nuevo()">Nueva Categoria</button>
+        
+        <div id="tabla"></div>
+        <!-- Modal para el formulario de guardar o actualizar -->
+            <div class="modal fade" id="modalCategoria" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalCategoria">Titulo</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="id" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="id" placeholder="Id de Categoria" disabled>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de Categoria">
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="descripcion" class="form-label">Descripcion</label>
+                                    <input type="text" class="form-control" id="descripcion" placeholder="Descripcion de Categoria">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de formulario -->
+            
+            <!-- modal de mensaje de confirmacion -->
+            <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mensaje">
+                                
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de mensaje de confirmacion -->
         <br/><br/><br/>
-        <a href="privado.html">Volver...</a>
+        <a href="index.html">Volver...</a>
 
     </body>
 </html>

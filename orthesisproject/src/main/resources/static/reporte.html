@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Demo Login</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="./js/reportejs.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Reportes</h1>
+            <label for="startDate" class="form-label">Fecha de inicio</label>
+            <input type="date" class="form-control" id="startDate" placeholder="Fecha de inicio">
+            <label for="devolutionDate" class="form-label">Fecha de entrega</label>
+            <input type="date" class="form-control" id="devolutionDate" placeholder="Fecha de entrega">
+            <br/>
+            <button type="button" class="btn btn-success" onclick="getReservationByPeriod()">Consultar Reservas por Fecha</button>
+            <br/>
+            <div id="tablaDates"></div>
+            <br/>
+            <button type="button" class="btn btn-primary" onclick="getCountStatusReservation()">Consultar Estado de Reservas</button>
+            <br/>
+            <div id="tablaStatus"></div>
+            <br/>
+            <button type="button" class="btn btn-danger" onclick="getReservationByClient()">Consultar Reservas por Cliente</button>
+            <br/>
+            <div id="tablaClient"></div>
+
+            <br/><br/><br/> <a href="index.html">Volver al inicio</a>
+        </div>
+    </body>
+</html>

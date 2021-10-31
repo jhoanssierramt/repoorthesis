@@ -1,0 +1,2 @@
+Buen día Profesor. El Frontend se encuentra dentro de la carpeta
+static.

@@ -6,6 +6,7 @@
 package co.edu.usa.orthesisproject.web;
 
 import co.edu.usa.orthesisproject.modelo.Client;
+import co.edu.usa.orthesisproject.modelo.custom.CountClient;
 import co.edu.usa.orthesisproject.servicios.ClientService;
 import java.util.List;
 import java.util.Optional;
@@ -61,7 +62,6 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     public Client update(@RequestBody Client client) {
         return clientService.update(client);
-   }
-    
+   }   
 }
 
