@@ -1,33 +1,82 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="./js/consultarorth.js"></script>
-        <script type="text/javascript" src="./js/guardarorth.js"></script>
-        <script type="text/javascript" src="./js/eliminarorth.js"></script>
-        <script type="text/javascript" src="./js/actualizarorth.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Orthesis</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/orthesisjs.js"></script>
 
     </head>
-
     <body>
         <h1>Gestión de Órtesis</h1>
-        <h3>Registrar Órtesis:</h2>
-        ID <input type="number" id="id" disabled/> <br>
-        Marca <input type="text" id="brand"/> <br>
-        Año <input type="number" id="year"/> <br>
-        Categoria/Id <input type="number" id="categoryId"/> <br>
-        Nombre <input type="text" id="name"/> <br>
-        Descripción <input type="text" id="description"/> <br>
-        <button onclick="guardarorth()">Guardar</button> <br/>
-        
-        <h4>Órtesis almacenadas:</h4>
-        <button onclick="consultarorth()">Consultar Datos</button> 
-        <div id="tabla">
-          <!-- Esto es un comentario en html y, 
-            puede ser multilinea  -->
+        <button type="button" class="btn btn-success" onclick="nuevo()">Nueva Orthesis</button>
+        <div id="tabla"></div>
+        <!-- Modal para el formulario de guardar o actualizar -->
+        <div class="modal fade" id="modalCategoria" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalCategoria">Titulo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="id" class="form-label">ID</label>
+                                <input type="text" class="form-control" id="id" placeholder="Id de Orthesis" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="brand" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="brand" placeholder="Marca">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="year" class="form-label">Año</label>
+                                <input type="number" class="form-control" id="year" placeholder="Año">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="description" class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="description" placeholder="Descripcion">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- fin del modal de formulario -->
+        
+        <!-- modal de mensaje de confirmacion -->
+        <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensaje">
+                            
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal de mensaje de confirmacion -->
 
         <br/><br/><br/>
-        <a href="privado.html">Volver...</a>
+        <a href="index.html">Volver...</a>
     </body>
 </html>

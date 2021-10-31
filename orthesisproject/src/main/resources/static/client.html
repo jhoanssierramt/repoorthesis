@@ -1,32 +1,83 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="./js/consultarct.js"></script>
-        <script type="text/javascript" src="./js/guardarct.js"></script>
-        <script type="text/javascript" src="./js/eliminarct.js"></script>
-        <script type="text/javascript" src="./js/actualizarct.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Client</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/clientjs.js"></script>
 
     </head>
-
     <body>
-        <h1>Gestión de Clientes</h1>
-        <h4>Registrar cliente</h4>
-        ID <input type="number" id="idClient" disabled/> <br/>
-        Nombre <input type="text" id="name" /> <br/>
-        Email <input type="email" id="email" /> <br/>
-        Password <input type="password" id="password" /> <br/>
-        Edad <input type="number" id="age" /> <br/>
-        <button onclick="guardarct()">Guardar</button> <br/>
 
-        <h4>Clientes Registrados</h4>
-        <button onclick="consultarct()">Consultar Datos</button>
-        <div id="tabla">
-          <!-- Esto es un comentario en html y, 
-            puede ser multilinea  --> 
+        <h1>Gestión de Clientes</h1>
+        <button type="button" class="btn btn-success" onclick="nuevo()">Nuevo Cliente</button>
+        <div id="tabla"></div>
+        <!-- Modal para el formulario de guardar o actualizar -->
+        <div class="modal fade" id="modalCategoria" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="tituloModalCategoria">Registrar Cliente Nuevo</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="idClient" class="form-label">ID</label>
+                                <input type="number" class="form-control" id="idClient" placeholder="Id" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="email" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="email" placeholder="Correo">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="age" class="form-label">Edad</label>
+                                <input type="number" class="form-control" id="age" placeholder="Edad">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- fin del modal de formulario -->
         
+        <!-- modal de mensaje de confirmacion -->
+        <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalMensaje">Mensaje</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensaje">
+                            
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="cerrarModalMensaje()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal de mensaje de confirmacion -->
+
         <br/><br/><br/>
-        <a href="privado.html">Volver...</a>
+        <a href="index.html">Volver...</a>
     </body>
 </html>

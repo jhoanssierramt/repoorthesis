@@ -6,8 +6,12 @@
 package co.edu.usa.orthesisproject.servicios;
 
 import co.edu.usa.orthesisproject.modelo.Reservation;
+import co.edu.usa.orthesisproject.modelo.custom.CountClient;
+import co.edu.usa.orthesisproject.modelo.custom.CountStatusReservation;
 import co.edu.usa.orthesisproject.repositorios.ReservationRepository;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +32,8 @@ public class ReservationService {
     }
     
     public Reservation save(Reservation reservation){
+        /*
+
         //Lógica idReservation no nulo:
         //Como id es autoincrementable, es bueno no hacer esta comparación:
         //if (reservation.getIdReservation() != null) {
@@ -72,6 +78,7 @@ public class ReservationService {
                     return reservation;
                 }
             }
+            */
             
             //Si todo funciona se realiza el POST:
             return ReservationRepository.save(reservation);
@@ -163,7 +170,7 @@ public class ReservationService {
                     //Criterio de aceptación: Status debe ser "Programado", "cancelado" o "Realizado":
                     String statusQuery = reservation.getStatus();
                     System.out.println("StatusQuery: "+statusQuery);
-                    if((statusQuery.equals("Programado"))||(statusQuery.equals("cancelado"))||(statusQuery.equals("Realizado")))
+                    if((statusQuery.equals("programmed"))||(statusQuery.equals("cancelled"))||(statusQuery.equals("completed")))
                         reservaConsultada.get().setStatus(statusQuery);
                     else
                         return reservation;
@@ -174,5 +181,30 @@ public class ReservationService {
             }
         }
         return reservation;
+    }
+    
+    public List<Reservation> getReservationByPeriod(String dateA, String dateB) {
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+        Date a = new Date();
+        Date b = new Date();
+        try {
+            a = parser.parse(dateA);
+            b = parser.parse(dateB);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (a.before(b)) {
+            return ReservationRepository.getReservationByPeriod(a, b);
+        } else {
+            return new ArrayList<>();
+        }
+    }
+    
+    public CountStatusReservation getCountStatusReservation() {
+        return ReservationRepository.getCountStatusReservation();
+    }
+    
+    public List<CountClient> getReservationByClient() {
+        return ReservationRepository.getReservationByClient();
     }
 }

@@ -6,6 +6,8 @@
 package co.edu.usa.orthesisproject.web;
 
 import co.edu.usa.orthesisproject.modelo.Reservation;
+import co.edu.usa.orthesisproject.modelo.custom.CountClient;
+import co.edu.usa.orthesisproject.modelo.custom.CountStatusReservation;
 import co.edu.usa.orthesisproject.servicios.ReservationService;
 import java.util.List;
 import java.util.Optional;
@@ -60,5 +62,18 @@ public class ReservationController {
     public Reservation update(@RequestBody Reservation reservation) {
         return reservationService.update(reservation);
     }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationReportDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo) {
+        return reservationService.getReservationByPeriod(dateOne, dateTwo);
+    }
+    @GetMapping("/report-status")
+    public CountStatusReservation getCountReservation() {
+        return reservationService.getCountStatusReservation();
+    }
+    
+    @GetMapping("/report-clients")
+    public List<CountClient> getReservationByClient() {
+        return reservationService.getReservationByClient();
+    }
 }
-

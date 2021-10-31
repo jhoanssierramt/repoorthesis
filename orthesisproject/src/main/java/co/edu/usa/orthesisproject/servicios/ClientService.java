@@ -6,6 +6,7 @@
 package co.edu.usa.orthesisproject.servicios;
 
 import co.edu.usa.orthesisproject.modelo.Client;
+import co.edu.usa.orthesisproject.modelo.custom.CountClient;
 import co.edu.usa.orthesisproject.repositorios.ClientRepository;
 import java.util.List;
 import java.util.Optional;
@@ -80,7 +81,5 @@ public class ClientService {
         }
         return client;
     }
-    
-   
 }
 
